@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone/babel.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+
+    <title>Lista kontaktów w React</title>
+</head>
+<body>
+    <div id="app"></div>
+    <div id="appHeader"></div>
+
+      <script type="text/babel">
+          function AppHeader() {
+  return (
+    <div>
+      <header className="ui menu">
+        <nav className="ui container">
+          <a href="#" className="header item">
+            Lista kontaktów
+          </a>
+          <div className="header item">
+            <button className="ui button">Dodaj</button>
+          </div>
+        </nav>
+      </header>
+    
+    </div>
+  );
+}
+
+
+class ContactItem extends React.Component {
+  render() {
+    const {login, name, department} = this.props;
+    const imgUrl = `${login}.jpg`;
+  return (
+    <li className="item">
+      <img src={imgUrl} className="ui mini rounded image" />
+      <div className="content">
+        <h4 className="header">{name}</h4>
+        <div className="description">{department}</div>
+      </div>
+    </li>
+  );
+  }
+}
+
+class ContactsList extends React.Component {
+  render() {
+    return (
+    <ul className="ui relaxed divided list selection">
+      <ContactItem
+        login="woman"
+        name="Lena"
+        department="JavaScript Developer"
+      />
+      <ContactItem
+        login="man"
+        name="Brian"
+        department="Human Resources"
+      />
+      <ContactItem
+        login="man"
+        name="Rick"
+        department="QA"
+      />
+      <ContactItem
+        login="man"
+        name="Morty"
+        department="Python Developer"
+      />
+      <ContactItem
+        login="woman"
+        name="Amanda"
+        department="UI/UX designer"
+      />
+      <ContactItem
+        login="woman"
+        name="Eva"
+        department="Public Relations"
+      />
+    </ul>
+  );
+  }
+}
+
+
+class App extends React.Component {
+  render() {
+    return (
+    <div>
+      <AppHeader />
+      <main className="ui main text container">
+        <ContactsList />
+      </main>
+    </div>
+  );
+  }
+}
+
+
+ReactDOM.render(<App />, document.getElementById("appHeader"));
+// function ContactItem({ login, name, department }) {
+//   const imgUrl = `${login}.jpg`;
+//   return (
+//     <li className="item">
+//       <img src={imgUrl} className="ui mini rounded image" />
+//       <div className="content">
+//         <h4 className="header">{name}</h4>
+//         <div className="description">{department}</div>
+//       </div>
+//     </li>
+//   );
+// }
+
+//   function ContactsList() {
+//   return (
+//     <ul className="ui relaxed divided list selection">
+//       <ContactItem
+//         login="woman"
+//         name="Lena"
+//         department="JavaScript Developer"
+//       />
+//       <ContactItem
+//         login="man"
+//         name="Brian"
+//         department="Human Resources"
+//       />
+//       <ContactItem
+//         login="man"
+//         name="Rick"
+//         department="QA"
+//       />
+//       <ContactItem
+//         login="man"
+//         name="Morty"
+//         department="Python Developer"
+//       />
+//       <ContactItem
+//         login="woman"
+//         name="Amanda"
+//         department="UI/UX designer"
+//       />
+//       <ContactItem
+//         login="woman"
+//         name="Eva"
+//         department="Public Relations"
+//       />
+//     </ul>
+//   );
+// }
+
+
+//   function App() {
+//   return (
+//     <div>
+//       <AppHeader />
+//       <main className="ui main text container">
+//         <ContactsList />
+//       </main>
+//     </div>
+//   );
+// }
+
+
+// ReactDOM.render(<App />, document.getElementById("appHeader"));
+      </script>
+</body>
+</html>
+
+
