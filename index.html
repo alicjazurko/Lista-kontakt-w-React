@@ -8,6 +8,31 @@
   <script src="https://unpkg.com/babel-standalone/babel.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
 
+    <style>
+      section.form div {
+        display: flex;
+        font-size: 16px;
+        margin: 3px;
+      }
+
+      section.form div p {
+        padding: 5px;
+        width: 45px;
+        height: 20px;
+        line-height: 25px;
+      }
+      
+      section.form input {
+        border: 2px solid rgb(194, 194, 194);
+        border-radius: 5px;
+        font-size: 16px;
+        padding: 5px;
+      }
+
+      input:focus {
+        outline: none;
+      }
+    </style>
     <title>Lista kontaktów w React</title>
 </head>
 <body>
@@ -26,6 +51,17 @@
           <div className="header item">
             <button className="ui button">Dodaj</button>
           </div>
+          <section className='form'>
+            <div>
+              <p>Imię</p>
+              <input type="text" name="" id=""></input>
+            </div>
+            <div>
+              <p>Opis</p>
+              <input type="text" name="" id=""></input>
+            </div>
+          </section>
+          
         </nav>
       </header>
     
